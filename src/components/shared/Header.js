@@ -1,12 +1,15 @@
 import React from 'react';
-import {Button} from 'react-bootstrap'
+import {Button, Col, Row, Container} from 'react-bootstrap'
+import HeaderStyle from './Header.module.css';
 
 const Header = () => {
     return (
-        <React.Fragment>
-            <div>Header</div>
-            <Button variant="primary">hello</Button>
-        </React.Fragment>
+        <div className={HeaderStyle.container}>
+            <div className={HeaderStyle.logoContainer}>
+                <img src="/images/logo.svg" className={HeaderStyle.logo}/>
+            </div>
+            <div>menu items</div>
+        </div>
     )
 }
 
