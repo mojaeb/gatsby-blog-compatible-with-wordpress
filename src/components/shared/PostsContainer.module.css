@@ -1,0 +1,11 @@
+.main {
+    width: 85%;
+    min-height: 1100px;
+    margin: 30px auto 20px;
+    display: grid;
+    z-index: 200;
+    /*TODO learn about grid and 'grid-auto-rows'*/
+    grid-auto-rows: max-content;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+}

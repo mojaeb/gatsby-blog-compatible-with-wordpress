@@ -1,0 +1,3 @@
+for full search in wordpress posts
+
+http://backend.devtops.ir/wp-json/wp/v2/posts?search=int

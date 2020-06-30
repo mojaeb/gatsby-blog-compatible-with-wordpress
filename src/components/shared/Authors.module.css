@@ -1,0 +1,95 @@
+.container {
+    width: 80%;
+    margin: 100px auto 0;
+    padding-bottom: 100px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 400px auto;
+}
+
+/*pictures for authors*/
+.pic_container {
+    width: 90%;
+    height: 450px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:'TL TR'
+                        'TL TR'
+                        'TL TR'
+                        'TL TR'
+                        'BL TR'
+                        'BL BR'
+                        'BL BR';
+}
+
+.pic_item {
+    overflow: hidden;
+    border-radius: 7px;
+    transition: 200ms;
+    cursor: pointer;
+    background-image: url('/images/avatar.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.pic_item:nth-child(1) {grid-area: TL}
+.pic_item:nth-child(2) {grid-area: TR}
+.pic_item:nth-child(3) {grid-area: BL}
+.pic_item:nth-child(4) {grid-area: BR}
+.pic_item::after {
+    content: '';
+    position: absolute;
+    background: #33f3bf;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.0;
+    transition: 200ms;
+}
+
+.pic_item_available::after {
+    opacity: 0.4;
+}
+/*content container*/
+.content_container {
+    display: flex;
+    flex-direction: column;
+
+}
+.content_title {
+    font-size: 35px;
+    font-weight: bold;
+}
+.content_description {
+    padding: 5px 0 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.content_name {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.content_name img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+}
+
+.quotation{
+    background-image: url("/images/iconmonstr-quote-3.svg");
+    width: 60px;
+    height: 60px;
+    margin: 20px 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.quotation_rotate {
+    align-self: flex-end;
+    transform: rotate(180deg);
+}

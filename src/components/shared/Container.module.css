@@ -1,0 +1,10 @@
+.main {
+    width: 85%;
+    margin: 50px auto;
+}
+
+.background {
+    background-image: url("/iamges/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}

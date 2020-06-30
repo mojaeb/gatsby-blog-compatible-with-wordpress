@@ -27,8 +27,26 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    // {
+    //   resolve: 'gatsby-plugin-load-script',
+    //   options: {
+    //     src: 'https://unpkg.com/ionicons@5.0.0/dist/ionicons.js', // Change to the script filename
+    //   },
+    // },
+
+
+
+    // gatsby wordpress sourcing
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "backend.devtops.ir",
+        protocol: "http",
+        restApiRoutePrefix: "wp-json",
+        hostingWPCOM: false,
+        useACF: false
+      },
+    },
   ],
 }

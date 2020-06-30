@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+.main {
+    background-color: #F2F2F2;
+    display: flex;
+
+}
+
+.main a {
+    text-decoration: none;
+    color: #969696;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    margin: 5px;
+}
+.selected {
+    background-color: #33E0C9;
+    color: #fff !important;
+    border-radius: 3px;
+}
+

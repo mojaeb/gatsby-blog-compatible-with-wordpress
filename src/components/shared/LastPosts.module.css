@@ -1,0 +1,91 @@
+.container {
+    width: calc(85% + 40px);
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    height: 550px;
+
+}
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.right {
+    flex: 1;
+}
+/*
+post styles
+*/
+
+.post {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    text-decoration: none;
+    color: #222;
+    transition: 300ms;
+    /*box-shadow: -10px 10px rgba(130, 130, 130, 0.65);*/
+}
+.post:hover {
+    transform: scale(1.02);
+    box-shadow: -5px 5px rgba(130, 130, 130, 0.65);
+}
+.column_post {flex-direction: column}
+.row_post {flex-direction: row}
+.post_pic{
+    flex: 1;
+    flex-basis: 200px;
+    display: flex;
+}
+
+.post_pic img{
+    width: 100%;
+    height: auto;
+    flex: 1;
+    object-fit: cover;
+}
+.post_content {
+    flex-grow: 5;
+    flex-basis: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.post_content_learnMore {
+    font-size: 18px;
+    color: blue;
+    font-weight: bold;
+    display: flex;
+}
+.post_content_learnMore span {
+    padding: 0 5px;
+}
+
+/* more posts styles*/
+.moreContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.moreLink {
+    display: flex;
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    font-weight: bolder;
+}
+
+.moreLink i {
+    text-decoration: none;
+    transition: 200ms;
+    transform: translateX(-5px);
+}
+.moreLink:hover i{
+    transform: translateX(-10px);
+}

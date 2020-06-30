@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+}
+.sheet {
+    flex: 1;
+    /*background-image: linear-gradient(to left,rgb(51, 136, 248),rgb(51, 248, 189));*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: contain;*/
+    background-color: #f7f7f7;
+    padding: 40px;
+    text-align: center;
+}
+.sheet_title {
+    font-size: 30px;
+    text-align: center;
+}

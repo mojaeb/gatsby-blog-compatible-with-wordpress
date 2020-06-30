@@ -1,0 +1,97 @@
+.container {
+    margin: 90px 0 0;
+    display: grid;
+    grid-template-columns: 250px auto 150px;
+    grid-template-areas: 'author text other';
+
+}
+strong {
+    font-weight: bold;
+}
+.tip {
+
+}
+.text {
+    line-height: 2;
+    font-size: 22px;
+    grid-area: text;
+}
+.author {
+    grid-area: author;
+}
+.box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.box p {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 100;
+}
+.box b {
+    color: #2f4eff;
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 18px;
+}
+.box img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.other {grid-area: other;}
+
+.bottom_author {
+    display: flex;
+    flex-direction: row;
+    line-height: normal;
+    margin-top: 50px;
+    position: relative;
+    background-color: #f4f4f4;
+    padding: 50px 90px;
+}
+.bottom_author_pic {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    right: -50px;
+    top: 20%;
+    background-color: red;
+    border-radius: 50%;
+}
+.bottom_author_pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom_author_text {}
+.bottom_author_text small {
+    display: block;
+    font-size: 15px;
+    color: #999;
+}
+.bottom_author_text p {
+    display: block;
+    font-size: 16px;
+    margin-top: 20px;
+    color: #333;
+    font-weight: 200;
+}
+
+/*responsive actions*/
+@media only screen and (max-width: 1200px) {
+    .container {
+        grid-template-columns: 200px auto;
+        grid-template-areas: 'author text';
+    }
+}
+@media only screen and (max-width: 870px) {
+    .container {
+        grid-template-columns: auto;
+        grid-template-areas: 'text' 'author' 'other';
+    }
+}

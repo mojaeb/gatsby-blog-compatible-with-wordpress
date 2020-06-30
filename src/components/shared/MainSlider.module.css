@@ -1,0 +1,42 @@
+.container {
+    background-image: linear-gradient(to left,rgb(51, 136, 248),rgb(51, 248, 189));
+    background-position-x: 40vw;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.row {
+    margin-top: 100px;
+    display: flex;
+    width: 90%;
+}
+.image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.imageContainer {
+    width: 60%;
+    height: 100%;
+}
+
+.text {
+    height: 200px;
+    width: 40%;
+    padding-left: 20px;
+    color: #fff;
+}
+.title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 80px;
+
+}
+.description {
+    font-weight: 200;
+    font-size: 20px;
+}
