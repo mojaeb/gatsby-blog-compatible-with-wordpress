@@ -8,7 +8,7 @@ const HomeCategories = ({categories}) => {
     <div>
       <div className={Styles.container}>
         {categories.edges.map((category, index) => (
-          <Link to={`/categories/${category.node.slug}`} className={Styles.button} key={index}>
+          <Link to={`/all-posts/${category.node.slug}/1`} className={Styles.button} key={index}>
             <div className={Styles.textContainer}>
               <h5 className={Styles.textButton}>{category.node.name}</h5>
               <p className={Styles.description}>{category.node.description}</p>

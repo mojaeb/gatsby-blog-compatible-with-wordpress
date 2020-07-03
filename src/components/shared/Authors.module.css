@@ -25,13 +25,15 @@
 .pic_item {
     overflow: hidden;
     border-radius: 7px;
-    transition: 200ms;
+    /*transition: 200ms;*/
     cursor: pointer;
-    background-image: url('/images/avatar.jpg');
+    /*background-image: url('/images/avatar.jpg');*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     position: relative;
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.2s ease-in-out;
 }
 .pic_item:nth-child(1) {grid-area: TL}
 .pic_item:nth-child(2) {grid-area: TR}

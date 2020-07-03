@@ -1,6 +1,8 @@
-
 const path = require(`path`)
-const slash = require(`slash`)
+
+const generateAllPostsPage = require('./generatePage/postsPage')
+const generatePostPage = require('./generatePage/postPage')
+const generateAllCategoryPage = require('./generatePage/categoryPage')
 
 
 
@@ -16,28 +18,30 @@ exports.createPages = async ({graphql, actions}) => {
                         status
                         template
                         format
+                        slug
                     }
                 }
+            }
+            allWordpressCategory {
+              edges {
+                node {
+                  id
+                  count
+                  slug
+                }
+              }
             }
               
         }
     `)
   if (result.errors) throw new Error(result.errors)
-  //templates
+  const { allWordpressPost, allWordpressCategory } = result.data
   const postTemplate = path.resolve(`./src/templates/post.js`)
-  const { allWordpressPost } = result.data
+  const postsTemplate = path.resolve(`./src/templates/posts.js`)
+  const categoriesTemplate = path.resolve(`./src/templates/posts-by-categories.js`)
 
-  //generate the pages
-  allWordpressPost.edges.forEach(edge => {
-    createPage({
-      // path: `/post/${decodeURIComponent(edge.node.path)}`,
-      path: decodeURIComponent(edge.node.path),
-      component: slash(postTemplate),
-      context: {
-        id: edge.node.id,
-      },
-    })
-  })
-  //
 
+  generatePostPage(allWordpressPost.edges, createPage, postTemplate)
+  generateAllPostsPage(allWordpressPost.edges, createPage, postsTemplate)
+  generateAllCategoryPage(allWordpressCategory.edges, createPage, categoriesTemplate)
 }

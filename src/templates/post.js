@@ -17,7 +17,7 @@ export default function PostPage ({data}) {
           content={data.wordpressPost.content}
           category={data.wordpressPost.categories}
         />
-        <MainText/>
+        <MainText content={data.wordpressPost.content} avatar={data.wordpressPost.author.avatar_urls.wordpress_96}/>
       </Container>
       <Footer/>
     </React.Fragment>
@@ -36,6 +36,12 @@ export const pageQuery = graphql`
             categories {
                 id
                 name
+            }
+            author {
+                name
+                avatar_urls {
+                    wordpress_96
+                }
             }
             date(fromNow: true)
             featured_media {

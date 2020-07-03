@@ -28,6 +28,7 @@ const LastPosts = ({last, placeholderImage}) => {
             title={first.title}
             excerpt={first.excerpt}
             image={image1}
+            slug={first.slug}
             row={false}
             style={{margin: '0 20px'}}
           />
@@ -36,6 +37,7 @@ const LastPosts = ({last, placeholderImage}) => {
           <Post
             title={second.title}
             excerpt={second.excerpt}
+            slug={second.slug}
             image={image2}
             row={true}
             style={{margin: '0 20px'}}
@@ -44,6 +46,7 @@ const LastPosts = ({last, placeholderImage}) => {
           <Post
             title={third.title}
             excerpt={third.excerpt}
+            slug={third.slug}
             row={true}
             image={image3}
             style={{margin: '0 20px'}}
@@ -51,7 +54,7 @@ const LastPosts = ({last, placeholderImage}) => {
         </div>
       </div>
       <div className={Styles.moreContainer}>
-        <Link className={Styles.moreLink} to="/total-posts-page">
+        <Link className={Styles.moreLink} to="/all-posts/1">
           <span>more posts</span>
           <i className={'dripicons-arrow-thin-left'}/>
         </Link>
@@ -60,7 +63,7 @@ const LastPosts = ({last, placeholderImage}) => {
   )
 }
 
-export const Post = ({title, excerpt, row, style, col, height, image}) => {
+export const Post = ({title, excerpt, row, style, col, height, image, slug}) => {
   const TITLE_LENGTH = row ? 50 : col !== 2 ? 50 : 100;
   const DESCRIPTION_LENGTH = row ? 100 : col !== 2 ? 100 : 270;
 
@@ -68,7 +71,7 @@ export const Post = ({title, excerpt, row, style, col, height, image}) => {
   const description = excerpt.replace(remarkTags, '')
   return (
     <Link
-      to={'/post-page/'}
+      to={`/${decodeURIComponent(slug)}/`}
       className={[Styles.post, row ? Styles.row_post : Styles.column_post].join(' ')}
       style={{...style, height}}
     >

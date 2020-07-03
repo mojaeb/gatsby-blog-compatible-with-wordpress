@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from "react"
 import Styles from './Authors.module.css'
+import Img from 'gatsby-image'
 
 const title = 'this world is so small then no angry this world is so small then no angry',
   description = 'description is description is available from to you and other thinks description is available from to you and other thinks  available from to you and other thinks description is available from to you and other thinks description is available from to you and other thinks description is available from to you and other thinks'
@@ -12,15 +13,18 @@ const INITIAL_DATA = [
   {id: '29', name: 'alexander nilson', title, description, available: false, color: '#6243f3'}
 ];
 
-const Authors = () => {
+const Authors = (props) => {
   const [state, setState] = useState({authors: [], selected: null})
   React.useEffect(() => {
-    setState({
-      ...state,
-      authors: [...INITIAL_DATA],
-      selected: {...INITIAL_DATA[0]}
-    })
-  }, [])
+    if (props.data) {
+      const authors = props.data.map(item => item.node);
+      setState({
+        ...state,
+        authors: [...authors],
+        selected: {...authors[0]}
+      })
+    }
+  }, [props.data])
   const handleSetAuthor = (event, id) => {
     event.preventDefault();
     const select = state.authors.find(item => item.id === id)
@@ -29,15 +33,21 @@ const Authors = () => {
   return (
     <div className={Styles.container}>
       <div className={Styles.pic_container}>
-        {state.authors.map((author, index) => (
-          <PicItem
-            index={author.id}
-            key={author.id}
-            author={author}
-            onClick={handleSetAuthor}
-            selected={state.selected}
-          />
-        ))}
+        {state.authors.map((author, index) => {
+          console.log(author)
+          return (
+            // <Img fluid={author.featured_media.localFile.childImageSharp.fluid} />
+            <PicItem
+              index={author.id}
+              key={author.id}
+              author={author}
+              placeholderImage={author.featured_media.localFile.childImageSharp.fluid.tracedSVG}
+              image={author.featured_media.localFile.childImageSharp.fluid.src}
+              onClick={handleSetAuthor}
+              selected={state.selected}
+            />
+          )
+        })}
       </div>
       {state.selected ? (
         <AuthorContent author={state.selected}/>
@@ -52,14 +62,14 @@ const AuthorContent = ({author}) => {
       <p className={Styles.content_title}>{author.title}</p>
       <div className={Styles.content_description}>
         <div className={Styles.quotation}/>
-          {author.description}
+          <div dangerouslySetInnerHTML={{__html: author.content}}/>
         <div className={[Styles.quotation, Styles.quotation_rotate].join(' ')}/>
       </div>
       <div className={Styles.content_name}>
-        <img src="/images/avatar.jpg" alt=""/>
+        <img src={author.featured_media.author.avatar_urls.wordpress_48} alt=""/>
         <div>
           <p style={{color: '#777'}}>author name</p>
-          <p style={{fontWeight: 'bold'}}>{author.name}</p>
+          <p style={{fontWeight: 'bold'}}>{author.featured_media.author.name}</p>
         </div>
       </div>
     </div>
@@ -67,14 +77,27 @@ const AuthorContent = ({author}) => {
 }
 
 
-const PicItem = ({author, onClick, selected, index}) => (
-  <div
-    key={index}
-    onClick={event => onClick(event, author.id)}
-    className={[Styles.pic_item, author.id === selected.id ? Styles.pic_item_available : null].join(' ')}
-    style={author.available ? {backgroundColor: author.color}: null}
-  />
-)
+const PicItem = ({author, onClick, selected, index, placeholderImage, image}) => {
+  const [src, setSrc] = useState(null);
+  useEffect(() => {
+    setTimeout(() => {
+      const imageLoader = new Image()
+      imageLoader.src = image;
+      imageLoader.onload = () => {
+          setSrc(image)
+      }
+    }, 500)
+  }, [])
+  return (
+    <div
+      key={index}
+      onClick={event => onClick(event, author.id)}
+      style={{backgroundImage: `url("${src || placeholderImage}")`}}
+      className={[Styles.pic_item, author.id === selected.id ? Styles.pic_item_available : null].join(' ')}
+      // style={author.available ? {backgroundColor: author.color}: null}
+    />
+  )
+}
 
 
 export default Authors

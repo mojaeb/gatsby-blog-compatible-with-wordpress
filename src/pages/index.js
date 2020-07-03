@@ -13,7 +13,7 @@ const IndexPage = ({data}) => (
     <MainSlider image={data.headerImage}/>
     <HomeCategories categories={data.allWordpressCategory}/>
     <LastPosts last={data.allWordpressPost} placeholderImage={data.placeholderImage}/>
-    <Authors/>
+    <Authors data={data.allWordpressWpAuthors.edges}/>
     <Footer/>
   </div>
 )
@@ -38,7 +38,7 @@ export const indexQuery  = graphql`
             id
             title
             excerpt
-            
+            slug
             featured_media {
               localFile {
                 childImageSharp {
@@ -67,7 +67,33 @@ export const indexQuery  = graphql`
                 }
             }
         }
+
         
+        allWordpressWpAuthors {
+            edges {
+                node {
+                    id
+                    title
+                    content
+                    featured_media {
+                        localFile {
+                            childImageSharp {
+                                fluid{
+                                    ...GatsbyImageSharpFluid_tracedSVG
+                                }
+                            }
+                        }
+                        author {
+                            name
+                            slug
+                            avatar_urls {
+                                wordpress_48
+                            }
+                        }
+                    }
+                }
+            }
+        }
       
     }
 `

@@ -29,21 +29,75 @@
     display: flex;
     margin: 0 10px;
 }
+
 .menu a {
     margin: 0 10px;
     text-decoration: none;
     font-size: 17px;
     color: #484848;
 }
+.resultMenu {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    margin: 0 !important;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #00000021;
+    box-shadow: -5px 5px 0 #ececec;
+    animation: showResultMenu 300ms ease-in;
+    display: none;
+    transform: translateX(35%);
+}
+@keyframes showResultMenu {
+    0% {
+        opacity: 0;
+        top: 45px;
+    }
+    100% {
+        opacity: 1;
+        top: 40px;
+    }
+}
+.menu a:hover div {
+    display: block;
+}
 .searchBox {
     display: flex;
+    position: relative;
     align-items: center;
     background-color: #f7f7f7;
     border-radius: 2px;
 }
-.searchBox img {
-    padding: 8px 10px;
+.rightPart {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.spinner {
+    width: 30%;
+    height: 30%;
+    border-left: 2px solid #2875a4;
+    border-radius: 50%;
+    border-bottom: 2px solid #2875a4;
+    border-right: 2px solid #ffffff00;
+    border-top: 2px solid #ffffff00;
+
+    animation: spinner 300ms linear infinite;
+}
+@keyframes spinner {
+    0% {
+       transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*.searchBox img{*/
+/*    padding: 8px 10px;*/
+/*}*/
 .searchBox input, .searchBox input:hover, .searchBox input:active, .searchBox input:focus{
     border: none !important;
     outline: none;
@@ -53,5 +107,45 @@
     transition: 340ms;
 }
 .searchBox input:focus {
-    width: 340px;
+    width: 250px;
+}
+
+/**/
+.result {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #00000021;
+    box-shadow: -5px 5px 0 #ececec;
+    animation: showResult 500ms ease-in;
+    display: block;
+}
+.resultItem:nth-child(even){
+    background-color: #f3f3f3;
+}
+.resultItem {
+    animation: showResult 500ms ease-in;
+    padding: 10px 20px;
+    margin: 0;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: 300ms;
+    opacity: 1;
+}
+.resultItem:hover {
+    background-color: #5a5a5a;
+    color: #fff;
+}
+@keyframes showResult {
+    0% {
+        opacity: 0;
+        top: 32px;
+    }
+    100% {
+        opacity: 1;
+        top: 40px;
+    }
 }
