@@ -2,7 +2,7 @@ import React from 'react';
 import Styles from './Footer.module.css'
 import telegramLogo from './../../../static/icons/telegram.logo.svg'
 import { StaticQuery, graphql } from "gatsby"
-
+import {Link} from "gatsby"
 
 
 function FooterComponent({posts, categories}) {
@@ -17,22 +17,22 @@ function FooterComponent({posts, categories}) {
               <div>
                 <i className={'dripicons-clock'}/>
                 <span>{post.node.date}</span>
-                <a href="#">{post.node.categories ?post.node.categories[0].name : ''}</a>
+                {post.node.categories ? (
+                  <Link to={`all-posts/${post.node.categories[0].slug}/1`}>{post.node.categories[0].name}</Link>
+                ):null}
               </div>
             </div>
           ))}
         </div>
         <div className={`${Styles.menu} ${Styles.item}`}>
           <b>Menu</b>
-          <a href="#">posts</a>
-          <a href="#">categories</a>
+          <Link to={`all-posts/1`} href="#">posts</Link>
           <a href="#">about us</a>
-          <a href="#">contact</a>
         </div>
         <div className={`${Styles.menu} ${Styles.item}`}>
           <b>categories</b>
           {categories.map((item, index) => (
-            <a href="#">{item.node.name}</a>
+            <Link to={`all-posts/${item.node.slug}/1`}>{item.node.name}</Link>
           ))}
 
         </div>
@@ -72,6 +72,7 @@ export default function Footer() {
                   categories {
                     id
                     name
+                    slug
                   }
                   date(fromNow: true)
                 }

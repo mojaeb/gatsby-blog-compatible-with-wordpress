@@ -16,6 +16,7 @@ export default function PostPage ({data}) {
           title={data.wordpressPost.title}
           content={data.wordpressPost.content}
           category={data.wordpressPost.categories}
+          post={data.wordpressPost}
         />
         <MainText content={data.wordpressPost.content} avatar={data.wordpressPost.author.avatar_urls.wordpress_96}/>
       </Container>
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
             categories {
                 id
                 name
+                slug
             }
             author {
                 name

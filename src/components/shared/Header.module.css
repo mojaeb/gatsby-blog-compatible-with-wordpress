@@ -30,7 +30,7 @@
     margin: 0 10px;
 }
 
-.menu a {
+.menu a, .menu span {
     margin: 0 10px;
     text-decoration: none;
     font-size: 17px;
@@ -45,21 +45,21 @@
     background-color: #fff;
     border: 1px solid #00000021;
     box-shadow: -5px 5px 0 #ececec;
-    animation: showResultMenu 300ms ease-in;
+    animation: showResultMenu 200ms ease-in forwards;
     display: none;
     transform: translateX(35%);
 }
 @keyframes showResultMenu {
     0% {
         opacity: 0;
-        top: 45px;
+        top: 40px;
     }
     100% {
         opacity: 1;
-        top: 40px;
+        top: 45px;
     }
 }
-.menu a:hover div {
+.menu a:hover div, .menu span:hover div {
     display: block;
 }
 .searchBox {
@@ -136,7 +136,7 @@
     opacity: 1;
 }
 .resultItem:hover {
-    background-color: #5a5a5a;
+    background-color: #33D6CF;
     color: #fff;
 }
 @keyframes showResult {

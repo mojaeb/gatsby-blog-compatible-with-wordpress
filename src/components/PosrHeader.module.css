@@ -23,12 +23,14 @@
     margin-right: 70px;
     flex: 1;
 }
-.content>a {
-    background-image: linear-gradient(to left, #33D6CF, #33F6BD);
+.categoryItem {
+    background-image: linear-gradient(to left, #30dcd5, rgba(23, 209, 155, 0.7));
+    border-radius: 2px;
     padding: 5px 10px;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 15px;
 }
 .about_content {
     display: flex;

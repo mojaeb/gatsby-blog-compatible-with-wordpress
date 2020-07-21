@@ -3,6 +3,7 @@ import {Button, Col, Row, Container} from 'react-bootstrap'
 import Styles from './Header.module.css';
 import magnifyIcon from './../../../static/icons/magnify.icon.svg'
 import {Link, useStaticQuery} from "gatsby"
+import json from './../../../data'
 
 const Header = () => {
   const [searchText, setSearchText] = useState('')
@@ -32,15 +33,24 @@ const Header = () => {
 
   useEffect(() => {
     if (data && searchText.length > 1) {
-      setLoading(true)
-      fetch(`${data.site.siteMetadata.backendServer}wp-json/wp/v2/posts?search=${searchText}`)
-        .then(res => res.json())
-        .then(res => {
-          setLoading(false)
-          console.log(res)
-          setResult([...res])
-        })
-        .catch(err => console.log(err))
+      // setLoading(true)
+      const list = json.map(i => i.node)
+      const result = list.filter(i => {
+        const r = i.title.search(searchText)
+        if (r > -1) {
+          return i
+        }
+      })
+      setResult([...result])
+      // from wordpress :::::::
+      // fetch(`${data.site.siteMetadata.backendServer}wp-json/wp/v2/posts?search=${searchText}`)
+      //   .then(res => res.json())
+      //   .then(res => {
+      //     setLoading(false)
+      //     console.log(res)
+      //     setResult([...res])
+      //   })
+      //   .catch(err => console.log(err))
     }
   }, [searchText])
     return (
@@ -48,14 +58,14 @@ const Header = () => {
             <div className={Styles.main}>
               <div className={Styles.rightContainer}>
                 <Link to={'/'} className={Styles.logoContainer}>
-                  <img src="/images/logo.svg" className={Styles.logo}/>
+                  <img src="/images/logo1.svg" className={Styles.logo}/>
                 </Link>
                 <div className={Styles.menu}>
                   <Link to="/all-posts/1">posts</Link>
-                  <a href="#">
+                  <span>
                     categories
                     <Menu preSlug={'/all-posts'} nextSlug={'/1'} items={data.allWordpressCategory.edges.map(item => item.node)}/>
-                  </a>
+                  </span>
                   <a href="#">
                     about us
                   </a>
@@ -77,7 +87,7 @@ const Header = () => {
                     <div className={Styles.result}>
                       {result.map((item, index) => (
                       <Link to={`/${item.slug}`} key={index} className={Styles.resultItem}>
-                        {item.title.rendered}
+                        {item.title}
                       </Link>
                       ))}
                     </div>

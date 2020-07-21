@@ -13,7 +13,7 @@ const IndexPage = ({data}) => (
     <MainSlider image={data.headerImage}/>
     <HomeCategories categories={data.allWordpressCategory}/>
     <LastPosts last={data.allWordpressPost} placeholderImage={data.placeholderImage}/>
-    <Authors data={data.allWordpressWpAuthors.edges}/>
+    {/*<Authors data={data.allWordpressWpAuthors.edges}/>*/}
     <Footer/>
   </div>
 )
