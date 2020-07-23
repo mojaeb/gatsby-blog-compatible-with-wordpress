@@ -21,7 +21,7 @@ const PostHeader = ({image, title, content, category, post}) => {
         <h1>{title}</h1>
         <div className={Styles.about_content}>
           {/*<a href="#comments"> {COMMENTS} comment{COMMENTS > 1 ? 's' : null} </a>*/}
-          <p>{post.date}</p>
+          <p>{post ? post.date ? post.date : null: null}</p>
           <p> - 3 min read</p>
         </div>
       </div>
