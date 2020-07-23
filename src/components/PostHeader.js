@@ -12,7 +12,7 @@ const PostHeader = ({image, title, content, category, post}) => {
       </div>
       <div className={Styles.content}>
         {category ? (
-          <div style={{display: 'flex'}}>
+          <div style={{display: 'flex', flexWrap: 'wrap'}}>
             {category.map((item, index) => (
               <Link to={`all-posts/${item.slug}/1`} className={Styles.categoryItem}>{item.name}</Link>
             ))}

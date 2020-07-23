@@ -50,3 +50,36 @@
 .description{
     width:40%;
 }
+
+
+@media only screen and (max-width: 870px) {
+    .description {
+        display: none
+    }
+    .container {
+        margin: -40px auto 0;
+    }
+    .textContainer h5 {
+        width: 65%
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .learnMore {
+        font-size: 13px;
+
+    }
+    .learnMoreText {
+        font-size: 13px;
+        display: none;
+    }
+    .textContainer h5 {
+        width: auto;
+        
+        font-size: 25px
+    }
+    .button {
+        padding: 20px;
+    }
+}
+
