@@ -10,11 +10,11 @@ import Img from 'gatsby-image';
 
 const LastPosts = ({last, placeholderImage}) => {
   const first = last.edges[0].node
-  const second = last.edges[1].node
+  const second = last.edges[1] && last.edges[1].node
   const third = last.edges[2] && last.edges[2].node
 
   const image1 = first.featured_media.localFile.childImageSharp.fluid
-  const image2 = second.featured_media.localFile.childImageSharp.fluid
+  const image2 = second && second.featured_media.localFile.childImageSharp.fluid
   const image3 = third && third.featured_media.localFile.childImageSharp.fluid
   return (
     <div>
@@ -30,14 +30,16 @@ const LastPosts = ({last, placeholderImage}) => {
           />
         </div>
         <div className={Styles.left}>
-          <Post
-            title={second.title}
-            excerpt={second.excerpt}
-            slug={second.slug}
-            image={image2}
-            row={true}
-            style={{margin: '0 20px'}}
-          />
+          {second ? (
+            <Post
+              title={second.title}
+              excerpt={second.excerpt}
+              slug={second.slug}
+              image={image2}
+              row={true}
+              style={{margin: '0 20px'}}
+            />
+          ): null}
           
           {third ? (
             <React.Fragment>
