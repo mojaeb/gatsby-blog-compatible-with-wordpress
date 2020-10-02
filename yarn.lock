@@ -896,6 +896,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.11.2":
+  version "7.11.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
+  integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.3.1":
   version "7.10.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.5.tgz#303d8bd440ecd5a491eae6117fd3367698674c5c"
@@ -5816,6 +5823,14 @@ gatsby-plugin-manifest@^2.4.5:
     semver "^5.7.1"
     sharp "^0.25.1"
 
+gatsby-plugin-nprogress@^2.3.12:
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-2.3.12.tgz#2c36e95a7a8581ce49fede8c638c0b72dadc17ae"
+  integrity sha512-vkcJbTWj/QsLZMIJmZLHlrU56kwmje7Viia+i9mUW7Sl9ar4IwuKU4VHsW2Wr6uJ9JPGG5Ri+jfk7oqMUC9bmA==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    nprogress "^0.2.0"
+
 gatsby-plugin-offline@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-3.2.3.tgz#f5379edd450a454f25d339ae305233baa17ceabf"
@@ -9145,6 +9160,11 @@ npmlog@^4.0.1, npmlog@^4.1.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"

@@ -6,20 +6,16 @@ import Img from 'gatsby-image';
 //TODO delete this section and get data from graphql and wordPress
 
 
-const imageRecognition = (image, placeholderImage) => {
-  return image
-}
-
 
 
 const LastPosts = ({last, placeholderImage}) => {
   const first = last.edges[0].node
   const second = last.edges[1].node
-  const third = last.edges[2].node
-  const placeholderImageFluid = placeholderImage.childImageSharp.fluid;
-  const image1 = imageRecognition(first.featured_media.localFile.childImageSharp.fluid, placeholderImageFluid)
-  const image2 = imageRecognition(second.featured_media.localFile.childImageSharp.fluid, placeholderImageFluid)
-  const image3 = imageRecognition(third.featured_media.localFile.childImageSharp.fluid, placeholderImageFluid)
+  const third = last.edges[2] && last.edges[2].node
+
+  const image1 = first.featured_media.localFile.childImageSharp.fluid
+  const image2 = second.featured_media.localFile.childImageSharp.fluid
+  const image3 = third && third.featured_media.localFile.childImageSharp.fluid
   return (
     <div>
       <div className={Styles.container}>
@@ -42,15 +38,20 @@ const LastPosts = ({last, placeholderImage}) => {
             row={true}
             style={{margin: '0 20px'}}
           />
-          <div style={{paddingTop: 50}}/>
-          <Post
-            title={third.title}
-            excerpt={third.excerpt}
-            slug={third.slug}
-            row={true}
-            image={image3}
-            style={{margin: '0 20px'}}
-          />
+          
+          {third ? (
+            <React.Fragment>
+              <div style={{paddingTop: 50}}/>
+              <Post
+                title={third.title}
+                excerpt={third.excerpt}
+                slug={third.slug}
+                row={true}
+                image={image3}
+                style={{margin: '0 20px'}}
+              />
+            </React.Fragment>
+          ): null}
         </div>
       </div>
       <div className={Styles.moreContainer}>

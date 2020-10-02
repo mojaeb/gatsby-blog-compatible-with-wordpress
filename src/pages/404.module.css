@@ -1,0 +1,17 @@
+.titleParagraph {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#33f5bf, #33b9de);
+    -webkit-background-clip: text;
+    font-weight: bold;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+}
+
+.main{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

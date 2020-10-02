@@ -28,7 +28,15 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+      color: `tomato`,
+        showSpinner: false,
+        trickle: false,
+        minimum: 0.4,
+      },
+    },
     // {
     //   resolve: 'gatsby-plugin-load-script',
     //   options: {
