@@ -13,7 +13,7 @@ strong {
 }
 .text {
     line-height: 2;
-    font-size: 22px;
+    font-size: 17px;
     grid-area: text;
 }
 .text ul , .text ol{
@@ -29,14 +29,14 @@ strong {
 }
 .box p {
     color: #aaa;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 100;
 }
 .box b {
     color: #2f4eff;
     font-weight: bold;
     margin: 5px 0;
-    font-size: 18px;
+    font-size: 15px;
 }
 .box img {
     border-radius: 50%;

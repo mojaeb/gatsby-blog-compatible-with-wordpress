@@ -7,6 +7,7 @@
 }
 .image {
     width: 500px;
+	height: 100%;
     /*height: 310px;*/
     border-radius: 3px;
     overflow: hidden;
@@ -24,14 +25,15 @@
     flex: 1;
 }
 .categoryItem {
-    background-image: linear-gradient(to left, #30dcd5, rgba(23, 209, 155, 0.7));
-    border-radius: 2px;
-    padding: 5px 10px;
+    background-color: rgb(10 14 255);
+    border-radius: 3px;
+    padding: 2px 15px;
     color: #fff;
+    font-size: 14px;
     text-decoration: none;
     font-weight: bold;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    line-height: normal;
+
 }
 .about_content {
     display: flex;
@@ -46,7 +48,7 @@
     margin: 3px;
 }
 .about_content a {
-    color: blue;
+    color: rgb(10 14 255);
     text-decoration: none;
     font-weight: bold;
 }

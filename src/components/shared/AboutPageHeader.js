@@ -6,8 +6,8 @@ export default function AboutPageHeader({total, name}) {
   return (
     <div className={Styles.container}>
       <div className={Styles.sheet}>
-        <p className={Styles.sheet_title}>{name} posts</p>
-        <p>total posts is <span>{total}</span></p>
+        <p className={Styles.sheet_title}>مطالب {name}</p>
+        <p>مجموع مطالب: <span>{total}</span> عدد </p>
       </div>
     </div>
   )

@@ -7,15 +7,15 @@ import Styles from "./index.module.css";
 import LastPosts from "../components/shared/LastPosts"
 import Authors from "../components/shared/Authors"
 import Footer from "../components/shared/Footer"
+import Layout from "../components/shared/Layout"
 const IndexPage = ({data}) => (
-  <div className={Styles.main}>
-    <Header image={data.headerImage}/>
-    <MainSlider image={data.headerImage}/>
-    <HomeCategories categories={data.allWordpressCategory}/>
-    <LastPosts last={data.allWordpressPost} placeholderImage={data.placeholderImage}/>
-    {/*<Authors data={data.allWordpressWpAuthors.edges}/>*/}
-    <Footer/>
-  </div>
+  <Layout hasBackdrop={true}>
+      <MainSlider image={data.headerImage}/>
+      <HomeCategories categories={data.allWordpressCategory}/>
+      <LastPosts last={data.allWordpressPost} placeholderImage={data.placeholderImage}/>
+      {/*<Authors data={data.allWordpressWpAuthors.edges}/>*/}
+      <Footer/>
+  </Layout>
 )
 
 
@@ -53,14 +53,14 @@ export const indexQuery  = graphql`
         }
       }
       
-      placeholderImage: file(relativePath: { eq: "pexels-photo-3761163.jpeg" }) {
+      placeholderImage: file(name: { eq: "pexels-photo-3761163" }) {
             childImageSharp {
                 fluid(maxWidth: 600) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        headerImage: file(relativePath: { eq: "engineering.jpg" }) {
+        headerImage: file(name: { eq: "pexels-anna-shvets-3986959" }) {
             childImageSharp {
                 fluid(maxWidth: 900) {
                     ...GatsbyImageSharpFluid
@@ -69,31 +69,7 @@ export const indexQuery  = graphql`
         }
 
         
-        allWordpressWpAuthors {
-            edges {
-                node {
-                    id
-                    title
-                    content
-                    featured_media {
-                        localFile {
-                            childImageSharp {
-                                fluid{
-                                    ...GatsbyImageSharpFluid_tracedSVG
-                                }
-                            }
-                        }
-                        author {
-                            name
-                            slug
-                            avatar_urls {
-                                wordpress_48
-                            }
-                        }
-                    }
-                }
-            }
-        }
+
       
     }
 `

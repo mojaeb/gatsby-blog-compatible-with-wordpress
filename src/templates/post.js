@@ -1,15 +1,15 @@
-import React from 'react'
-import {graphql} from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Header from "../components/shared/Header"
 import Container from "../components/shared/Container"
 import PostHeader from "../components/PostHeader"
 import MainText from "../components/shared/MainText"
 import Footer from "../components/shared/Footer"
+import Layout from "../components/shared/Layout"
 
-export default function PostPage ({data}) {
+export default function PostPage({ data }) {
   return (
-    <React.Fragment>
-      <Header/>
+    <Layout hasBackdrop={false}>
       <Container background={false}>
         <PostHeader
           image={data.wordpressPost.featured_media.localFile.childImageSharp.fluid}
@@ -18,12 +18,17 @@ export default function PostPage ({data}) {
           category={data.wordpressPost.categories}
           post={data.wordpressPost}
         />
-        <MainText content={data.wordpressPost.content} avatar={data.wordpressPost.author.avatar_urls.wordpress_96}/>
+        <MainText
+          content={data.wordpressPost.content}
+          avatar={data.wordpressPost.author.avatar_urls.wordpress_96}
+          author={data.wordpressPost.author}
+        />
       </Container>
       <Footer/>
-    </React.Fragment>
+    </Layout>
   )
 }
+
 PostPage.defaultProps = {
   background: false
 }
@@ -45,7 +50,7 @@ export const pageQuery = graphql`
                     wordpress_96
                 }
             }
-            date(fromNow: true)
+            date(formatString: "YYYY-MM-DD")
             featured_media {
                 localFile {
                     childImageSharp {
@@ -60,6 +65,7 @@ export const pageQuery = graphql`
                     wordpress_96
                 }
                 name
+                description
             }
         }
         placeholderImage: file(relativePath: { eq: "replace-image.jpg" }) {

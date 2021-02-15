@@ -58,7 +58,7 @@ const LastPosts = ({last, placeholderImage}) => {
       </div>
       <div className={Styles.moreContainer}>
         <Link className={Styles.moreLink} to="/all-posts/1">
-          <span>more posts</span>
+          <span>بیشتر</span>
           <i className={'dripicons-arrow-thin-left'}/>
         </Link>
       </div>
@@ -85,7 +85,7 @@ export const Post = ({title, excerpt, row, style, col, height, image, slug}) => 
       <div className={Styles.post_content}>
         <p style={{fontSize: 25, fontWeight: 700}}>{title.length > TITLE_LENGTH ? `${title.substring(0, TITLE_LENGTH)}...` : title}</p>
         <p style={{fontSize: 17, }}>{description.length > DESCRIPTION_LENGTH ? `${description.substring(0, DESCRIPTION_LENGTH)}...` : description}</p>
-        <div className={Styles.post_content_learnMore}><span>learn more</span><span className={'dripicons-arrow-thin-left'}/></div>
+        <div className={Styles.post_content_learnMore}><span>خواندن</span><span className={'dripicons-arrow-thin-left'}/></div>
       </div>
     </Link>
   )

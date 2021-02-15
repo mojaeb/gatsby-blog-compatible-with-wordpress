@@ -34,3 +34,7 @@ time, mark, audio, video {
 * {
     direction: rtl;
 }
+
+* p span {
+    /*line-height: 150%;*/
+}

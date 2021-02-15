@@ -2,6 +2,8 @@ import React from "react";
 import Styles from './PosrHeader.module.css';
 import Img from 'gatsby-image';
 import {Link} from "gatsby"
+import jMoment from 'moment-jalaali'
+
 
 const PostHeader = ({image, title, content, category, post}) => {
   const COMMENTS = 3;
@@ -21,8 +23,8 @@ const PostHeader = ({image, title, content, category, post}) => {
         <h1>{title}</h1>
         <div className={Styles.about_content}>
           {/*<a href="#comments"> {COMMENTS} comment{COMMENTS > 1 ? 's' : null} </a>*/}
-          <p>{post ? post.date ? post.date : null: null}</p>
-          <p> - 3 min read</p>
+          <p>{post ? post.date ? jMoment(new Date(post.date)).format('jYYYY/jMM/jDD') : null: null}</p>
+          <p> 5 دقیقه زمان خواندن</p>
         </div>
       </div>
     </div>
