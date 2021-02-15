@@ -2,8 +2,8 @@
     background-color: #fff;
     width: 85%;
     border: 1px solid #e3e3e3;
-    box-shadow: -20px 20px rgba(109, 109, 109, 0.65);
-    margin: -80px auto 0;
+    box-shadow: -20px 20px rgba(109, 109, 109, 0.23);
+    margin: 30px auto 0;
     transform: translate(0px, -80px);
     border-radius: 5px;
 }

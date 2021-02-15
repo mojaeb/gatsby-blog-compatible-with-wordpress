@@ -1,6 +1,6 @@
 .titleParagraph {
     font-size: 72px;
-    background: -webkit-linear-gradient(#33f5bf, #33b9de);
+    background-color: rgb(10 14 255);
     -webkit-background-clip: text;
     font-weight: bold;
     text-align: center;
@@ -14,4 +14,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.box {
+    padding: 10px;
+    color: rgb(10 14 255);
+    background-color: rgba(10 14 255 /3%)
 }

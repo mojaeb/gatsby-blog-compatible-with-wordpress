@@ -50,8 +50,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        baseUrl: "backend.devtops.ir",
-        protocol: "http",
+        baseUrl: "localhost/devtops",
         restApiRoutePrefix: "wp-json",
         hostingWPCOM: false,
         useACF: true

@@ -8,11 +8,15 @@ const MainSlider = ({image}) => {
         <div className={Styles.container}>
             <div className={Styles.row}>
                 <div className={Styles.text}>
-                    <p className={Styles.title}>Contrary to popular texture, Lorem Ipsum the best</p>
-                    <p className={Styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took </p>
+                    <div className={Styles.title}>
+                        <p>بــرتــرین مطـالـب</p>
+                        <p>بـرای برتـرین هـا</p>
+
+                    </div>
+                    <p className={Styles.description}>دوتاپس سعی می کنه مطالب با کیفیت و جدید رو برای توسعه دهندگان و علاقه مندان به علوم کامپیوتر رو جمع آوری و نشر کنه</p>
                 </div>
                 <div className={Styles.imageContainer}>
-                    <Img fluid={image.childImageSharp.fluid} className={Styles.image}/>
+                    <Img fluid={image && image.childImageSharp.fluid} className={Styles.image}/>
                 </div>
             </div>
         </div>

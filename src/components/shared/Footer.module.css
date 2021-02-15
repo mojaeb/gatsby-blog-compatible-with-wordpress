@@ -26,6 +26,7 @@
 
 .about p {
     margin-top: 15px;
+    line-height: normal;
 }
 .about a {
     background-color: #fff;
