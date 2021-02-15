@@ -15,6 +15,8 @@
     display: flex;
     width: 90%;
 }
+
+
 .image {
     object-fit: cover;
     height: 100%;
