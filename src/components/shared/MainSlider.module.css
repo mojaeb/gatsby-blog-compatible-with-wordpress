@@ -52,20 +52,6 @@
     width: 84%;
 }
 
-
-
-/*responsive actions*/
-/*@media only screen and (max-width: 1380px) {*/
-/*    .description {*/
-/*        font-weight: 200;*/
-/*        font-size: 17px;*/
-/*    }*/
-/*    .title {*/
-/*        font-weight: bold;*/
-/*        font-size: 40px;*/
-/*        line-height: 50px;*/
-/*    }*/
-/*}*/
 @media only screen and (max-width: 1000px) {
     .container {
         background-position-x: 0;
