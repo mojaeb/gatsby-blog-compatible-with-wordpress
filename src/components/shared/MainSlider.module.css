@@ -9,16 +9,11 @@
     display: flex;
     justify-content: flex-end;
 }
-
-
-
 .row {
     margin-top: 100px;
     display: flex;
     width: 90%;
 }
-
-
 .image {
     object-fit: cover;
     height: 100%;
@@ -52,20 +47,6 @@
     width: 84%;
 }
 
-
-
-/*responsive actions*/
-/*@media only screen and (max-width: 1380px) {*/
-/*    .description {*/
-/*        font-weight: 200;*/
-/*        font-size: 17px;*/
-/*    }*/
-/*    .title {*/
-/*        font-weight: bold;*/
-/*        font-size: 40px;*/
-/*        line-height: 50px;*/
-/*    }*/
-/*}*/
 @media only screen and (max-width: 1000px) {
     .container {
         background-position-x: 0;
