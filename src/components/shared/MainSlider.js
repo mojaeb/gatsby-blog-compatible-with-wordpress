@@ -1,6 +1,6 @@
-import React from 'react'
-import Styles from './MainSlider.module.css'
-import Img from 'gatsby-image'
+import React from "react"
+import Styles from "./MainSlider.module.css"
+import Img from "gatsby-image"
 
 
 const MainSlider = ({image}) => {

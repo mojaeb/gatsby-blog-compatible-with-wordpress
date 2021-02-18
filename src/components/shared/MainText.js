@@ -1,5 +1,6 @@
-import React from 'react';
-import Styles from './MainText.module.css'
+import React from "react"
+import Styles from "./MainText.module.css"
+
 export default function MainText(props) {
   return (
     <div  className={Styles.container}>

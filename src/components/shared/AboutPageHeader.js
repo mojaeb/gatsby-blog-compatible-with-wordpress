@@ -1,5 +1,5 @@
-import React from 'react';
-import Styles from './AboutPageHeader.module.css'
+import React from "react"
+import Styles from "./AboutPageHeader.module.css"
 
 
 export default function AboutPageHeader({total, name}) {

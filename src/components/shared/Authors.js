@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Styles from './Authors.module.css'
-import Img from 'gatsby-image'
+import Styles from "./Authors.module.css"
 
 const title = 'this world is so small then no angry this world is so small then no angry',
   description = 'description is description is available from to you and other thinks description is available from to you and other thinks  available from to you and other thinks description is available from to you and other thinks description is available from to you and other thinks description is available from to you and other thinks'

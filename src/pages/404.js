@@ -1,6 +1,6 @@
 import React from "react"
-import Styles from './404.module.css'
-import {Link} from 'gatsby'
+import Styles from "./404.module.css"
+import { Link } from "gatsby"
 
 
 const NotFoundPage = () => (

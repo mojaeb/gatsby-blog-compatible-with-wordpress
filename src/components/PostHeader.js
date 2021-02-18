@@ -1,8 +1,8 @@
-import React from "react";
-import Styles from './PosrHeader.module.css';
-import Img from 'gatsby-image';
-import {Link} from "gatsby"
-import jMoment from 'moment-jalaali'
+import React from "react"
+import Styles from "./PosrHeader.module.css"
+import Img from "gatsby-image"
+import { Link } from "gatsby"
+import jMoment from "moment-jalaali"
 
 
 const PostHeader = ({image, title, content, category, post}) => {

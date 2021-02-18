@@ -1,9 +1,8 @@
-import React from 'react';
-import Styles from './Footer.module.css'
-import telegramLogo from './../../../static/icons/telegram.logo.svg'
-import { StaticQuery, graphql } from "gatsby"
-import {Link} from "gatsby"
-import jMoment from 'moment-jalaali'
+import React from "react"
+import Styles from "./Footer.module.css"
+import telegramLogo from "./../../../static/icons/telegram.logo.svg"
+import { graphql, Link, StaticQuery } from "gatsby"
+import jMoment from "moment-jalaali"
 
 
 function FooterComponent({posts, categories}) {

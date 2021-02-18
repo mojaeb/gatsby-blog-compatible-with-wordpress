@@ -1,6 +1,6 @@
 import React from "react"
-import Styles from './Categories.module.css';
-import {Link} from "gatsby"
+import Styles from "./Categories.module.css"
+import { Link } from "gatsby"
 
 const HomeCategories = ({categories}) => {
 

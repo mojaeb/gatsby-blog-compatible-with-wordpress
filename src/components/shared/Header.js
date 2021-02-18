@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Button, Col, Row, Container } from "react-bootstrap"
 import Styles from "./Header.module.css"
 import magnifyIcon from "./../../../static/icons/magnify.icon.svg"
 import { Link, useStaticQuery } from "gatsby"

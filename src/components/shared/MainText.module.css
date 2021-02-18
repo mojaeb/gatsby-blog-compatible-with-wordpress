@@ -1,8 +1,8 @@
 .container {
     margin: 90px 0 0;
     display: grid;
-    grid-template-columns: 250px auto 150px;
-    grid-template-areas: 'author text other';
+    /*grid-template-columns: 250px auto 150px;*/
+    /*grid-template-areas: 'author text other';*/
 
 }
 strong {
@@ -13,13 +13,18 @@ strong {
 }
 .text {
     line-height: 2;
+    max-width: 670px;
     font-size: 17px;
     grid-area: text;
+}
+.text img {
+    height: auto;
 }
 .text ul , .text ol{
     padding-right: 25px;
 }
 .author {
+    position: absolute;
     grid-area: author;
 }
 .box {

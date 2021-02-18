@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react"
 import Header from "./Header"
-import Styles from './Layout.module.css'
-
+import Styles from "./Layout.module.css"
 
 
 export default function Layout({hasBackdrop, children}) {

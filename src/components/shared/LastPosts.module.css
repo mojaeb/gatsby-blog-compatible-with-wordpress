@@ -61,10 +61,12 @@ post styles
     color: blue;
     font-weight: bold;
     display: flex;
+    align-items: center;
 }
 .post_content_learnMore span {
     padding: 0 5px;
 }
+
 
 /* more posts styles*/
 .moreContainer {

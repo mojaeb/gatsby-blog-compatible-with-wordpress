@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "../components/shared/Header"
 import Container from "../components/shared/Container"
 import PostHeader from "../components/PostHeader"
 import MainText from "../components/shared/MainText"
 import Footer from "../components/shared/Footer"
 import Layout from "../components/shared/Layout"
 
-export default function PostPage({ data }) {
+
+export default function PostPage({ data , ...props}) {
   return (
     <Layout hasBackdrop={false}>
       <Container background={false}>
