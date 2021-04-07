@@ -17,3 +17,6 @@ then run and enjoy 🚀
 
 
 create by mohamadjafar ebrahimi @mojaebi
+
+
+you can set your wordpress site url in ``gatsby-config.js`` file
