@@ -1,6 +1,6 @@
 import React from "react"
-import Styles from './Categories.module.css';
-import {Link} from "gatsby"
+import Styles from "./Categories.module.css"
+import { Link } from "gatsby"
 
 const HomeCategories = ({categories}) => {
 
@@ -13,7 +13,7 @@ const HomeCategories = ({categories}) => {
               <h5 className={Styles.textButton}>{category.node.name}</h5>
               <p className={Styles.description}>{category.node.description}</p>
               <span className={Styles.learnMore}>
-                <p className={Styles.learnMoreText}> learn more</p>
+                <p className={Styles.learnMoreText}>دیدن مطالب</p>
                 <span className={`${Styles.learnMoreIcon} dripicons-arrow-thin-left`} />
               </span>
             </div>

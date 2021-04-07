@@ -1,7 +1,8 @@
-import React from 'react';
-import {PageProps, Link} from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import React from "react"
+import { PageProps } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 const AboutPage = (props: PageProps) => {
     return (
         <Layout>

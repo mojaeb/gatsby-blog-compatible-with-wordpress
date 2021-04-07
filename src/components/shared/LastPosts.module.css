@@ -3,7 +3,7 @@
     margin: 50px auto;
     display: flex;
     flex-direction: row;
-    height: 550px;
+    /*height: 550px;*/
 
 }
 .left {
@@ -32,7 +32,7 @@ post styles
 }
 .post:hover {
     transform: scale(1.02);
-    box-shadow: -5px 5px rgba(130, 130, 130, 0.65);
+    box-shadow: -8px 8px rgba(130, 130, 130, 0.36);
 }
 .column_post {flex-direction: column}
 .row_post {flex-direction: row}
@@ -61,10 +61,12 @@ post styles
     color: blue;
     font-weight: bold;
     display: flex;
+    align-items: center;
 }
 .post_content_learnMore span {
     padding: 0 5px;
 }
+
 
 /* more posts styles*/
 .moreContainer {
@@ -88,4 +90,19 @@ post styles
 }
 .moreLink:hover i{
     transform: translateX(-10px);
+}
+
+
+
+
+@media only screen and (max-width: 650px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .left {
+        margin-top: 40px;
+    }
+    .row_post {flex-direction: column;}
+
 }

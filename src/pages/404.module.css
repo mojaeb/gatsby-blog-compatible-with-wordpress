@@ -1,0 +1,23 @@
+.titleParagraph {
+    font-size: 72px;
+    background-color: rgb(10 14 255);
+    -webkit-background-clip: text;
+    font-weight: bold;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+}
+
+.main{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    padding: 10px;
+    color: rgb(10 14 255);
+    background-color: rgba(10 14 255 /3%)
+}

@@ -1,14 +1,13 @@
 import React from "react"
+import Styles from "./404.module.css"
+import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+  <div className={Styles.main}>
+    <Link to={"/"} className={Styles.titleParagraph}>DEVTOPS</Link>
+    <p className={Styles.box}>پیدا نشد 404</p>
+  </div>
 )
 
 export default NotFoundPage

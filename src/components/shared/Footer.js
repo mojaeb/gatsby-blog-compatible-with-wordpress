@@ -1,8 +1,8 @@
-import React from 'react';
-import Styles from './Footer.module.css'
-import telegramLogo from './../../../static/icons/telegram.logo.svg'
-import { StaticQuery, graphql } from "gatsby"
-
+import React from "react"
+import Styles from "./Footer.module.css"
+import telegramLogo from "./../../../static/icons/telegram.logo.svg"
+import { graphql, Link, StaticQuery } from "gatsby"
+import jMoment from "moment-jalaali"
 
 
 function FooterComponent({posts, categories}) {
@@ -10,38 +10,38 @@ function FooterComponent({posts, categories}) {
     <div className={Styles.footer}>
       <div className={Styles.container}>
         <div className={Styles.item}>
-          <b>Last Posts</b>
+          <b>آخرین مطالب</b>
           {posts.map((post, index) => (
             <div key={index} className={Styles.postItem}>
               <p>{post.node.title}</p>
               <div>
                 <i className={'dripicons-clock'}/>
-                <span>{post.node.date}</span>
-                <a href="#">{post.node.categories ?post.node.categories[0].name : ''}</a>
+                <span>{jMoment(new Date(post.node.date)).format('jYYYY/jMM/jDD')}</span>
+                {post.node.categories ? (
+                  <Link to={`all-posts/${post.node.categories[0].slug}/1`}>{post.node.categories[0].name}</Link>
+                ):null}
               </div>
             </div>
           ))}
         </div>
         <div className={`${Styles.menu} ${Styles.item}`}>
-          <b>Menu</b>
-          <a href="#">posts</a>
-          <a href="#">categories</a>
-          <a href="#">about us</a>
-          <a href="#">contact</a>
+          <b>منو</b>
+          <Link to={`all-posts/1`} href="#">مطالب</Link>
+          {/*<a href="#">درباره ما</a>*/}
         </div>
         <div className={`${Styles.menu} ${Styles.item}`}>
-          <b>categories</b>
+          <b>دسته بندی ها</b>
           {categories.map((item, index) => (
-            <a href="#">{item.node.name}</a>
+            <Link key={index} to={`all-posts/${item.node.slug}/1`}>{item.node.name}</Link>
           ))}
 
         </div>
         <div className={`${Styles.about} ${Styles.item}`}>
-          <b>about Devtops</b>
-          <p>this is about paragraph for devtops team and i hope see in above the developing placement i hope see in above the developing placement</p>
+          <b>درباره دوتاپس</b>
+          <p>دوتاپس با هدف پوشش مباحث و اخبار برنامه نویسی چند وقتیه شروع به فعالیت کرده و سعی میکنه هر روز با کیفیت تر و به روز تر مطالب رو به شما دوستان منتقل کنه</p>
           <a href="https://t.me/devtops" target={"_blank"}>
             <img src={telegramLogo} alt="telegram: @devtops"/>
-            join channel
+            عضویت در کانال
           </a>
         </div>
       </div>
@@ -72,8 +72,9 @@ export default function Footer() {
                   categories {
                     id
                     name
+                    slug
                   }
-                  date(fromNow: true)
+                  date(formatString: "YYYY-MM-DD")
                 }
               }
             }

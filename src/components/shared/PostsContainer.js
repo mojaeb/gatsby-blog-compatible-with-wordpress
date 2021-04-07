@@ -1,5 +1,5 @@
-import React from 'react';
-import Styles from './PostsContainer.module.css'
+import React from "react"
+import Styles from "./PostsContainer.module.css"
 import { Post } from "./LastPosts"
 
 

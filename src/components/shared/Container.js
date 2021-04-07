@@ -1,5 +1,5 @@
 import React from "react"
-import Styles from "./Container.module.css";
+import Styles from "./Container.module.css"
 
 const Container = ({children, background}) => {
   return (

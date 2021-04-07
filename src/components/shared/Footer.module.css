@@ -23,8 +23,10 @@
     margin-top: 15px;
     color: blue;
 }
+
 .about p {
     margin-top: 15px;
+    line-height: normal;
 }
 .about a {
     background-color: #fff;
@@ -60,4 +62,26 @@
 .postItem a {
     color: blue;
     text-decoration: none;
+}
+
+
+@media only screen and (max-width: 795px) {
+    .container {
+        grid-template-columns: auto auto auto;
+    }
+    .about {
+        margin-top: 30px;
+        grid-column: 1 / 4;
+     }
+}
+
+@media only screen and (max-width: 610px){
+    .container {
+        display: flex;
+        padding-top: 5px;
+        flex-direction: column;
+    }
+    .container .item {
+        margin-top: 50px;
+    }
 }

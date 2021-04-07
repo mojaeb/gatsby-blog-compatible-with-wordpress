@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `devtops.ir || learning computer science contents`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@mojaeb`,
     backendServer: 'http://backend.devtops.ir/'
   },
   plugins: [
@@ -19,16 +19,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `devtops.ir`,
+        short_name: `devtops`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0a0eff`,
+        theme_color: `#0a0eff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+      color: `#55BFC7`,
+        showSpinner: true,
+        // trickle: false,
+        // minimum: 0.4,
+      },
+    },
     // {
     //   resolve: 'gatsby-plugin-load-script',
     //   options: {
@@ -43,7 +51,7 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         baseUrl: "backend.devtops.ir",
-        protocol: "http",
+        protocol: "https",
         restApiRoutePrefix: "wp-json",
         hostingWPCOM: false,
         useACF: true

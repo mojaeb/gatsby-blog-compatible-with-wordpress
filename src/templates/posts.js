@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import Header from "../components/shared/Header"
 import PostsContainer from "../components/shared/PostsContainer"
-import Styles from './../pages/total-posts-page.module.css'
+import Styles from "./../pages/total-posts-page.module.css"
 import AboutPageHeader from "../components/shared/AboutPageHeader"
 import Footer from "../components/shared/Footer"
 import { graphql } from "gatsby"
