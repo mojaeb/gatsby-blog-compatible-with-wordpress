@@ -16,3 +16,17 @@ import './static/images/avatar.jpg'
 import './static/images/iconmonstr-quote-3.svg'
 import './static/images/96686565.png'
 import './static/images/background.svg'
+import NProgress from 'nprogress'
+
+export const onClientEntry = () => {
+  alert("df")
+  // console.log("We've started!")
+  // callAnalyticsAPI()
+}
+
+export const onInitialClientRender = () => {
+  NProgress.start();
+  setTimeout(function() {
+    document.getElementById("___loader").style.display = "none"
+  }, 1000)
+}

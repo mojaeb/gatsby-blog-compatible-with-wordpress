@@ -22,8 +22,8 @@ module.exports = {
         name: `devtops.ir`,
         short_name: `devtops`,
         start_url: `/`,
-        background_color: `#55BFC7`,
-        theme_color: `#55BFC7`,
+        background_color: `#0a0eff`,
+        theme_color: `#0a0eff`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
@@ -32,9 +32,9 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
       color: `#55BFC7`,
-        showSpinner: false,
-        trickle: false,
-        minimum: 0.4,
+        showSpinner: true,
+        // trickle: false,
+        // minimum: 0.4,
       },
     },
     // {

@@ -59,7 +59,7 @@ export const indexQuery = graphql`
         }
         headerImage: file(name: { eq: "devtops-wide-image" }) {
             childImageSharp {
-                fluid(quality: 95) {
+                fluid(quality: 60) {
                     ...GatsbyImageSharpFluid
                 }
             }
