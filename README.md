@@ -20,3 +20,5 @@ create by mohamadjafar ebrahimi @mojaebi
 
 
 you can set your wordpress site url in ``gatsby-config.js`` file
+
+default language is persian (RTL)
